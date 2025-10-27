@@ -1,0 +1,48 @@
+{
+  "projects": [
+    {
+      "title": "LMMs-Eval — Evaluation Suite of Large Multimodal Models",
+      "description": "Developed an open-source evaluation framework for large multimodal models (LMMs) supporting text, image, video, and audio tasks. I extended this suite to wildlife datasets (MammAlps, AnimalKingdom) to benchmark models like InternVL3-8B on species and behavior recognition, creating reproducible pipelines and standardized metrics.",
+      "link": "https://github.com/luciehmct/lmms-eval",
+      "tags": ["ML Benchmarking", "Multimodal AI", "Reproducible Pipelines", "Open-Source", "Cloud Computing"],
+  "affiliation": "Mathis Group, Campus Biotech (Geneva)",
+  "presentation": "assets/Benchmarking VLMs for Animal Behavior Analysis with LMMs-Eval.pdf",
+  "presentation_summary": "Extended LMMs-Eval to wildlife datasets (MammAlps and AnimalKingdom). Registered Jaccard Index and evaluated InternVL3-8B on species/action/activity benchmarks; demonstrates reproducible evaluation pipelines and standardized metrics.",
+  "page": "projects/lmms-eval.html"
+    },
+    {
+      "title": "EPFL AI Tutor (NLP Course Project)",
+      "description": "As part of a 4-person team, we built a specialized AI tutor for EPFL course content. We fine-tuned a 0.6B LLM using DPO, RAG, and Quantization. My specific role was implementing the quantized pipeline.",
+      "link": "https://github.com/luciehmct/epfl-ai-tutor",
+      "tags": ["LLM", "NLP", "DPO", "SFT", "RAG", "Quantization", "HuggingFace"],
+      "affiliation": "EPFL (CS-552 Project)",
+      "page": "projects/epfl-ai-tutor.html"
+    },
+    {
+      "title": "Movie Violence and Crime Correlation Analysis",
+      "description": "Owned the real-world crime data pipeline for a team project. I explored, extracted, and cleaned daily US crime statistics (NIBRS) to engineer the weekly 'violence score,' the key dependent variable for our team's ARDL time-series model.",
+      "link": "https://jadetherras.github.io/ADAlligators_website/",
+      "tags": ["Python", "Time-series", "Data Pipeline", "Data Cleaning", "Feature Engineering", "ARDL"],
+      "affiliation": "EPFL",
+      "page": "projects/movie-violence.html"
+    },
+    {
+      "title": "Machine Learning for Plasma Transition Detection",
+      "description": "Developed time-series models (Bi-LSTM, Uni-LSTM) to detect H-L back-transitions in tokamak plasma. I implemented the full data preprocessing pipeline, engineered feature sets (including FFT), and systematically evaluated model performance (F1 Score: 0.72).",
+      "link": "https://github.com/luciehmct/HL-back-transition-prediction",
+      "tags": ["Time-series", "Python", "LSTM", "Signal Processing", "PyTorch", "TensorFlow", "Scikit-learn"],
+      "affiliation": "Swiss Plasma Center",
+      "page": "projects/plasma-transition.html"
+    },
+    {
+      "title": "Cadmium Catcher: Live Biotherapeutic Product (iGEM)",
+      "description": "Contributed to the project from conception to production, including wet lab work. I also led the web development, designing and coding the official website to communicate our science, which helped win the 'Best Education Prize'.",
+      "link": "https://2023.igem.wiki/epfl/description",
+      "tags": ["Wet Lab", "Synthetic Biology", "Web Development", "React.JS", "SciComm", "iGEM"],
+      "affiliation": "iGEM - EPFL",
+      "notes": "Awards: Gold Medal (iGEM 2023), Best Education Prize"
+      ,
+      "page": "projects/cadmium-catcher.html"
+    }
+  ]
+}

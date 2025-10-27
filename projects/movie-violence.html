@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Movie Violence & Crime — Project Details</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .project-hero { padding-top: 40px; }
+    .meta-inline { color: var(--muted-muted); margin-bottom: 12px; }
+    /* Project header: larger title and right-aligned location */
+    .project-header { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; margin-bottom: 8px; }
+    .project-header h2 { font-size: clamp(1.6rem, 2.6vw, 2.6rem); margin: 0; line-height: 1.05; }
+    .project-location { margin: 0; color: var(--muted-muted); font-weight: 600; }
+    .repo-inline { display: inline-block; margin-top: 8px; }
+    /* Responsive side-by-side figures for pipeline images */
+  .fig-grid { display: flex; gap: 20px; justify-content: center; align-items: flex-start; flex-wrap: wrap; margin-bottom: 22px; }
+  /* Make both figures bigger but still responsive; switch to 2-column grid on wide screens */
+  .fig-grid figure { flex: 0 1 520px; max-width: 520px; box-sizing: border-box; margin: 0; }
+  .fig-grid figure .img-wrap { width: 100%; height: 380px; display:flex; align-items:center; justify-content:center; background: #fff; border-radius: 8px; box-shadow: 0 8px 28px rgba(11,11,16,0.08); }
+  .fig-grid figure img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+    .fig-grid figcaption { color: var(--muted-muted); font-style: italic; font-size: 0.9rem; margin-top: 8px; text-align: center; }
+    @media (max-width: 1200px) {
+      .fig-grid figure { flex: 1 1 460px; max-width: 48%; }
+    }
+    @media (max-width: 920px) {
+      .fig-grid figure { flex: 1 1 420px; max-width: 48%; }
+    }
+    @media (min-width: 960px) {
+      /* ensure two columns side-by-side on desktop */
+      .fig-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; align-items: start; }
+      .fig-grid figure { max-width: none; justify-self: center; }
+      .fig-grid figure .img-wrap { width: 100%; }
+    }
+    @media (max-width: 720px) {
+      .fig-grid { gap: 12px; }
+      .fig-grid figure { max-width: 100%; flex-basis: 100%; }
+  .fig-grid figure .img-wrap { height: 300px; }
+    }
+    /* Header: place repo link to the right of the title */
+    .site-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .site-header .header-right { display: flex; align-items: center; gap: 12px; }
+    .repo-btn { background: var(--periwinkle); color: white; padding: 8px 12px; border-radius: 6px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+    .repo-btn:hover { opacity: 0.95; }
+  /* PDF embed styles */
+  /* Slightly smaller embedded PDF for better page balance */
+  .pdf-embed { width: 100%; max-width: 920px; height: 640px; border: 1px solid var(--muted-border); border-radius: 8px; box-shadow: 0 8px 28px rgba(11,11,16,0.08); margin: 18px auto; display: block; }
+  @media (max-width: 920px) { .pdf-embed { max-width: 720px; height: 520px; } }
+  @media (max-width: 720px) { .pdf-embed { height: 420px; } }
+  .pdf-fallback { text-align: center; margin-top: 8px; }
+  /* Footer actions: back link left, up arrow right */
+  .footer-actions { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; }
+  .up-btn { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 8px; background: var(--periwinkle); color: white; text-decoration: none; box-shadow: 0 6px 14px rgba(11,11,16,0.12); }
+  .up-btn svg { color: white; }
+  .up-btn:focus { outline: 2px solid color-mix(in srgb, var(--periwinkle) 60%, black); outline-offset: 2px; }
+  </style>
+</head>
+<body>
+    <header>
+    <div class="container site-header">
+      <h1>Movie Violence & Crime</h1>
+      <div class="header-right">
+        <a class="repo-btn" href="https://jadetherras.github.io/ADAlligators_website/" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="vertical-align:middle; margin-right:8px;">
+            <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+            <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+          </svg>
+          View Data Story
+        </a>
+        <nav><ul><li><a href="../index.html">Home</a></li><li><a href="../index.html#projects">Projects</a></li></ul></nav>
+      </div>
+    </div>
+  </header>
+  <aside class="project-toc" aria-label="Projects table of contents">
+    <h3>Projects</h3>
+    <nav>
+      <ul id="project-toc-list"></ul>
+    </nav>
+  </aside>
+  <a id="project-prev" class="proj-nav left" href="#" aria-label="Previous project" title="Previous project">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+  <a id="project-next" class="proj-nav right" href="#" aria-label="Next project" title="Next project">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+  <main class="container project-hero" id="top">
+    <div class="project-header">
+      <h2>The feedback loop of violence: How violent movies shape real-world violence</h2>
+      <p class="meta-inline project-location">EPFL Project</p>
+    </div>
+  
+  <p><strong>Context:</strong> This project investigated whether the prevalence of violent movies correlates with real-world violence in the US. We analyzed 17,000+ movies (from CMU and Kaggle datasets) against US crime statistics (from the NIBRS dataset). To isolate the impact, we implemented an auto-regressive distributed lag (ARDL) model with time-fixed effects. Our study found no statistically significant correlation based on the available data.</p>
+
+    <h3>What I implemented</h3>
+    <ul>
+      <li>Managed the complete data pipeline for all real-world violence data, using the NIBRS dataset.</li>
+      <li>Performed extensive data exploration, extraction, and cleaning to prepare the raw, daily-level crime statistics for time-series analysis.</li>
+      <li>Engineered the primary "violence score," a weekly aggregated metric that served as the key dependent variable for the team's ARDL model.</li>
+      <li>Created plots and visualizations to analyze and present the trends and patterns in the real-world violence data over time.</li>
+    </ul>
+
+    <h3>My contributions</h3>
+    <p>In this team project, my primary responsibility was owning the "real-world violence" half of the equation. I sourced, processed, and modeled all crime data from the NIBRS database, transforming raw daily reports into a clean, robust weekly time-series. The "violence score" I engineered was the core variable our team used to test our hypothesis. I also produced the visualizations for this data, which helped inform the ARDL model's design and interpret the final results.</p>
+
+    <h3>Project Data Story</h3>
+    <iframe class="pdf-embed" src="https://jadetherras.github.io/ADAlligators_website/"></iframe>
+    <div class="pdf-fallback">If the site doesn't display, <a href="https://jadetherras.github.io/ADAlligators_website/" target="_blank" rel="noopener">open the Data Story in a new tab</a>. (Note: Does not work on Safari).</div>
+
+    <div class="footer-actions">
+      <a class="btn ghost" href="../index.html#projects">Back to projects</a>
+      <a class="up-btn" href="#top" title="Back to top" aria-label="Back to top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 4L12 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6 10L12 4L18 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </main>
+  <script>
+    // Smooth scroll behavior for the up arrow only.
+    document.addEventListener('DOMContentLoaded', function () {
+      var upBtn = document.querySelector('.up-btn');
+      if (upBtn) {
+        upBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    });
+  </script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

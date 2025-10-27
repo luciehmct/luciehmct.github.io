@@ -1,0 +1,25 @@
+{
+  "name": "luciehmct.github.io",
+  "version": "1.0.0",
+  "description": "A personal portfolio website to showcase projects and skills :)",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "live-server src",
+    "build": "echo 'Build step can be added here'",
+    "deploy": "gh-pages -d src"
+  },
+  "keywords": [
+    "portfolio",
+    "cv",
+    "website",
+    "projects"
+  ],
+  "author": "Lucie Huamani-Cantrelle",
+  "license": "MIT",
+  "dependencies": {
+    "live-server": "^1.2.1",
+    "gh-pages": "^3.2.3"
+  },
+  "devDependencies": {},
+  "homepage": "https://luciehmct.github.io/"
+}

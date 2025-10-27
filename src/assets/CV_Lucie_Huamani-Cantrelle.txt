@@ -1,0 +1,81 @@
+                      Lucie Huamani-Cantrelle
+         + Lausanne     # lucie.huamani-cantrelle@epfl.ch   § luciehmct   ð lucie-huamani-cantrelle
+
+Professional Summary
+ Master’s student in Life Sciences Engineering at EPFL with a minor in Data Science, passionate about
+ applying Machine Learning and AI to solve complex scientific challenges. Skilled in data engineering,
+ predictive modeling, and computer vision, with hands-on experience in cloud computing. Strong in-
+ terdisciplinary background combining life sciences, data science, and computational modeling, with a
+ proven ability to work in diverse teams and deliver results in collaborative environments.
+
+Education
+ École Polytechnique Fédérale de Lausanne (EPFL)                                           2024 – Present
+ Master of Science in Life Sciences Engineering, Minor in Data Science
+    ◦ Relevant coursework: Machine Learning, Foundation Models and Generative AI, Applied Data Analysis,
+      Applied Biostatistics, Modern Natural Language Processing, Genomics and Bioinformatics.
+ École Polytechnique Fédérale de Lausanne (EPFL)                                             2020 – 2024
+ Bachelor of Science in Life Sciences Engineering
+    ◦ Relevant coursework: Machine Learning, Applied Software Engineering.
+
+Experience
+ Research Intern – Mathis Group                                                     Geneva, Switzerland
+ EPFL                                                                                   Jun – Aug 2024
+   ◦ Conducted research on multimodal machine learning benchmarks for species and behavior recognition
+     using Vision-Language Models.
+   ◦ Built scalable evaluation pipelines with Run:AI (RCP) and containerized workflows, contributing to
+     reproducible ML experiments.
+ Student Teaching Assistant                                                       Lausanne, Switzerland
+ EPFL                                                                                Feb 2025 – Present
+   ◦ Mentored students in physiology and algebra, strengthening scientific communication and teaching
+     skills.
+ Science Workshop Facilitator                                                                   Switzerland
+ Festival Scientastic – EPFL (Lausanne and Sion editions)                             Nov 2024 & May 2025
+   ◦ Led interactive workshops introducing children to the scientific method.
+
+Projects
+ Movie Violence and Crime Correlation Analysis 2                                            EPFL
+  ◦ Applied ML, NLP, and sentiment analysis to model correlations between violent movies and crime
+    statistics.
+ Machine Learning for Plasma Transition Detection 2                                Swiss Plasma Center
+  ◦ Developed time-series models to detect plasma transitions, improving forecasting accuracy in fusion
+    research.
+ Cadmium Catcher Live Biotherapeutic Product 2                                              iGEM – EPFL
+   ◦ Developed and coded the official website, creating visual and written content to communicate complex
+     scientific concepts.
+   ◦ Produced educational materials for outreach, contributing to the team’s award-winning science commu-
+     nication.
+
+
+
+
+                                           Lucie Huamani-Cantrelle
+Technical & Soft Skills
+ Programming: Python, R, SQL, HTML, CSS, ReactJS
+ ML & Data Science: Scikit-learn, TensorFlow, PyTorch, Pandas, NumPy, OpenCV, Time-Series Analysis
+ Cloud & MLOps: Run:AI (RCP), Git, Docker, LaTeX
+ Data Visualization: Matplotlib, Seaborn, Plotly, Excel, Dashboard design
+ Soft Skills: Scientific Communication, Teamwork, Project Management, Problem solving, Teaching & Mentoring
+
+Achievements & Awards
+ Awards for the Cadmium Catcher Live Biotherapeutic Product                     EPFL – iGEM 2023
+  ◦ Gold Medal – iGEM Competition — Awarded for excellence in synthetic biology innovation.
+  ◦ Best Education Prize – Winner — Awarded for excellence in science communication and outreach.
+  ◦ Best Therapeutics Project – Nominee — Recognized among top innovative therapeutic solutions.
+  ◦ Safety and Security Award – Nominee — Recognized for advancing risk management in bioengineering.
+
+Activities & Volunteering
+ Student Representative                                                                   EPFL 2023 – Present
+   ◦ Organizing career-oriented events and acting as a liaison between students and faculty.
+ Science Outreach – Festival Scientastic                                                          EPFL 2024
+   ◦ Facilitated workshops to introduce children to the scientific method.
+ Volunteer Firefighter & Lifeguard                                                         France 2019 – 2020
+   ◦ Ensured public safety and emergency response in high-stress environments.
+
+Languages
+  French: C2                            Spanish: C2                          English: C1
+
+
+
+
+                                            Lucie Huamani-Cantrelle
+

@@ -1,0 +1,21 @@
+/* Palette overrides (final adjustments requested by user) */
+:root{
+    --blush-pink: #E6BABA;
+    --periwinkle: #799CC9;
+    --blush-white: #F9F4F4;
+    --charcoal: #343A40;
+    --soft-peach: #F2AFA0;
+    --pink-gold: #E5C4C0;
+}
+
+/* Header background uses Blush Pink (girly/header) per final palette; logo/nav text remain Charcoal */
+header {
+    background: var(--blush-pink) !important;
+    color: var(--espresso) !important;
+}
+
+.logo { color: var(--espresso) !important; }
+
+/* Navigation text and hover/active behavior */
+nav a { color: var(--espresso) !important; }
+nav a:hover, nav a:focus, nav a.active { color: var(--periwinkle) !important; text-decoration: underline !important; }

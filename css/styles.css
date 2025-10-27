@@ -323,8 +323,25 @@ header.visible {
 
 @media (max-width: 900px) {
     .project-toc { display: none; }
-    .proj-nav { display: none; }
-    .project-hero { margin-left: 0; }
+    /* On small screens show fixed arrows at the top corners and add side margins to project pages */
+    .proj-nav { display: flex; }
+    .project-hero { margin-left: 0; margin-right: 0; padding-left: 12px; padding-right: 12px; }
+    /* small-screen arrow positioning: fixed at top on each side, slightly smaller */
+    .proj-nav {
+        position: fixed !important;
+        top: 12px;
+        bottom: auto;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 260;
+    }
+    .proj-nav.left { left: 12px; }
+    .proj-nav.right { right: 12px; }
+    .proj-nav svg { width: 18px; height: 18px; }
 }
 
 /* small responsive tweaks */
@@ -338,6 +355,11 @@ header.visible {
     header { display: none !important; }
     /* remove the scroll-padding set for fixed header so slides snap to true top */
     main#slides { scroll-padding-top: 0 !important; }
+}
+
+/* Slightly larger header text for desktop users */
+@media (min-width: 900px) {
+    .logo { font-size: 1.2rem; }
 }
 
 /* small swipe hint for mobile/trackpad users */

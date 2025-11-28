@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Plasma Detection — Project Details</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .project-hero { padding-top: 40px; }
+    .meta-inline { color: var(--muted-muted); margin-bottom: 12px; }
+    /* Project header: larger title and right-aligned location */
+    .project-header { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; margin-bottom: 8px; }
+    .project-header h2 { font-size: clamp(1.6rem, 2.6vw, 2.6rem); margin: 0; line-height: 1.05; }
+    .project-location { margin: 0; color: var(--muted-muted); font-weight: 600; }
+    .repo-inline { display: inline-block; margin-top: 8px; }
+    /* Header: place repo link to the right of the title */
+    .site-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .site-header .header-right { display: flex; align-items: center; gap: 12px; }
+    .repo-btn { background: var(--periwinkle); color: white; padding: 8px 12px; border-radius: 6px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+    .repo-btn:hover { opacity: 0.95; }
+    /* Footer actions: back link left, up arrow right */
+    .footer-actions { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; }
+    .up-btn { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 8px; background: var(--periwinkle); color: white; text-decoration: none; box-shadow: 0 6px 14px rgba(11,11,16,0.12); }
+    .up-btn svg { color: white; }
+    .up-btn:focus { outline: 2px solid color-mix(in srgb, var(--periwinkle) 60%, black); outline-offset: 2px; }
+
+    /* Simple Table Styles */
+    .results-table { width: 100%; max-width: 800px; margin: 20px 0; border-collapse: collapse; box-shadow: 0 4px 12px rgba(11,11,16,0.08); border-radius: 8px; overflow: hidden; }
+    .results-table th, .results-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--muted-border); }
+    .results-table th { background-color: var(--muted-bg); font-weight: 600; }
+    .results-table tr:last-child td { border-bottom: none; }
+    .results-table tr:nth-child(even) { background-color: var(--muted-bg); }
+    .results-table td:nth-child(4) { font-weight: 700; color: var(--periwinkle); }
+  </style>
+</head>
+<body>
+    <header>
+    <div class="container site-header">
+      <h1>Plasma Transition Detection</h1>
+      <div class="header-right">
+        <a class="repo-btn" href="https://github.com/luciehmct/HL-back-transition-prediction" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="vertical-align:middle; margin-right:8px;">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38C13.71 14.53 16 11.54 16 8c0-4.42-3.58-8-8-8z"/>
+          </svg>
+          Repository
+        </a>
+        <nav><ul><li><a href="../index.html">Home</a></li><li><a href="../index.html#projects">Projects</a></li></ul></nav>
+      </div>
+    </div>
+  </header>
+  <aside class="project-toc" aria-label="Projects table of contents">
+    <h3>Projects</h3>
+    <nav>
+      <ul id="project-toc-list"></ul>
+    </nav>
+  </aside>
+  <a id="project-prev" class="proj-nav left" href="#" aria-label="Previous project" title="Previous project">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+  <a id="project-next" class="proj-nav right" href="#" aria-label="Next project" title="Next project">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+  <main class="container project-hero" id="top">
+    <div class="project-header">
+      <h2>Detection of Back-Transitions from H Mode to L Mode in a Tokamak</h2>
+      <p class="meta-inline project-location">Swiss Plasma Center</p>
+    </div>
+
+    <p><strong>Context:</strong> In a tokamak, plasma can exist in a Low (L) confinement mode or a more stable, High (H) confinement mode. This project focuses on detecting the "back-transition" from H mode to L mode, a critical event to understand for maintaining plasma stability. The objective was to use machine learning to identify these transitions from complex time-series data and analyze the conditions that lead to them.</p>
+
+    <h3>What I implemented</h3>
+    <ul>
+  <li><strong>Data Exploration & Selection:</strong> Analyzed and segmented raw experimental data, separating 35 unusable experiments (due to missing features like <code>DML</code>) to create a clean 'selected experiments' dataset for training.</li>
+  <li><strong>Signal Preprocessing Pipeline:</strong> Developed the Python preprocessing pipeline to handle the complex time-series data. This included linear interpolation for missing values, applying Fast Fourier Transform (FFT) to the <code>Halpha13</code> signal as an optional feature, and normalizing features.</li>
+      <li><strong>Model Development:</strong> Implemented, trained, and evaluated time-series models to classify transitions, primarily a Bidirectional-LSTM (Bi-LSTM) and a Unidirectional-LSTM (Uni-LSTM), using PyTorch and TensorFlow.</li>
+  <li><strong>Feature Engineering:</strong> Defined and tested multiple feature sets (e.g., <code>features1</code>, <code>features2</code>) combining parameters like plasma energy (<code>Wtot</code>), magnetic signals (<code>DML</code>), and density/temperature profiles.</li>
+      <li><strong>Hyperparameter Optimization:</strong> Used Optuna to automate hyperparameter tuning to improve model performance.</li>
+    </ul>
+
+    <h3>My contributions</h3>
+  <p>My role in this project was to help build the end-to-end machine learning pipeline. I was heavily involved in exploring the raw tokamak shot data, writing the Python scripts to clean and preprocess the signals, and engineering the feature sets for the models. I implemented both the Uni-LSTM and Bi-LSTM architectures, customized their time-window parameters, and ran a systematic evaluation to determine the best-performing model and feature combination.</p>
+
+    <h3>Results</h3>
+    <p>We systematically evaluated both models against different feature sets and preprocessing options. The Bi-LSTM model clearly outperformed the Uni-LSTM, achieving a top F1 Score of 0.7163 on the test set, as shown in the summary of best results below.</p>
+
+    <table class="results-table">
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>FFT Applied</th>
+          <th>F1 Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>BI_LSTM</td>
+          <td>No</td>
+          <td>0.7163</td>
+        </tr>
+        <tr>
+          <td>UNI_LSTM</td>
+          <td>No</td>
+          <td>0.5699</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="footer-actions">
+      <a class="btn ghost" href="../index.html#projects">Back to projects</a>
+      <a class="up-btn" href="#top" title="Back to top" aria-label="Back to top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 4L12 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6 10L12 4L18 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </main>
+  <script>
+    // Smooth scroll behavior for the up arrow only.
+    document.addEventListener('DOMContentLoaded', function () {
+      var upBtn = document.querySelector('.up-btn');
+      if (upBtn) {
+        upBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    });
+  </script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

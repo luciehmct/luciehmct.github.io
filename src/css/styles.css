@@ -101,6 +101,32 @@ header {
     #floating-contact .contact-btn { width: 44px; height: 44px; min-width:44px; min-height:44px; }
 }
 
+/* Make floating contact smaller on narrow screens (compact pill) */
+@media (max-width: 520px) {
+    #floating-contact {
+        bottom: 8px; /* pull it a bit closer to avoid overlapping nav gestures */
+        padding: 4px 6px; /* tighter pill */
+        gap: 6px;
+        box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+    }
+    /* smaller circular icons to reduce footprint on narrow phones */
+    #floating-contact .contact-btn { width: 32px; height: 32px; min-width:32px; min-height:32px; padding:4px; }
+    /* make SVG icons a touch smaller so they fit neatly */
+    #floating-contact .contact-btn svg { width: 14px !important; height: 14px !important; }
+}
+
+/* Extra-small screens (very compact) */
+@media (max-width: 380px) {
+    #floating-contact {
+        bottom: 6px;
+        padding: 4px 6px;
+        gap: 5px;
+    }
+    /* tiniest touch targets while preserving accessibility — keep >=28px */
+    #floating-contact .contact-btn { width: 28px; height: 28px; min-width:28px; min-height:28px; padding:3px; }
+    #floating-contact .contact-btn svg { width: 12px !important; height: 12px !important; }
+}
+
 /* Icon-only contact buttons: small circular clickable icons */
 .contact-btn { display: inline-flex; align-items: center; justify-content: center; padding: 8px; width: 38px; height: 38px; min-width: 38px; min-height: 38px; border-radius: 999px; text-decoration: none; font-weight: 700; color: var(--blush-pink); background: transparent; box-shadow: 0 6px 14px rgba(11,11,16,0.06); border: 1px solid rgba(229,196,192,0.6); flex: 0 0 auto; }
 .contact-btn.ghost { background: transparent; color: var(--blush-pink); border: 1px solid rgba(229,196,192,0.6); box-shadow: none; }
@@ -124,6 +150,17 @@ header h1 {
 
 @media (max-width: 700px) {
     .logo { font-size: 0.9rem; }
+}
+
+/* Slightly larger header and logo for desktop users */
+@media (min-width: 900px) {
+    header {
+        padding: 28px 0; /* more vertical space on desktop */
+    }
+    .logo {
+        font-size: 1.15rem; /* increase logo/title size on desktop */
+    }
+    .site-header { width: 92%; }
 }
 
 nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 1rem; }
@@ -323,51 +360,55 @@ header.visible {
 
 @media (max-width: 900px) {
     .project-toc { display: none; }
-    /* On small screens show fixed arrows at the top corners and add side margins to project pages */
-    .proj-nav { display: flex; }
-    .project-hero { margin-left: 0; margin-right: 0; padding-left: 12px; padding-right: 12px; }
-    /* small-screen arrow positioning: fixed at top on each side, slightly smaller */
+    .proj-nav { display: none; }
+    .project-hero { margin-left: 0; }
+}
+
+/* On small devices, pin project prev/next arrows to the top corners and make them smaller */
+@media (max-width: 900px) {
     .proj-nav {
-        position: fixed !important;
-        top: 12px;
+        display: flex; /* override earlier hide */
+        position: fixed;
+        top: calc(env(safe-area-inset-top, 0px) + 10px);
         bottom: auto;
         width: 40px;
         height: 40px;
         border-radius: 10px;
-        display: flex;
+        padding: 6px;
+        z-index: 260; /* above floating contact and header */
+        box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+        background: rgba(255,255,255,0.32);
+        backdrop-filter: blur(8px) saturate(140%);
+        -webkit-backdrop-filter: blur(8px) saturate(140%);
         align-items: center;
         justify-content: center;
-        z-index: 260;
     }
-    .proj-nav.left { left: 12px; }
-    .proj-nav.right { right: 12px; }
-    .proj-nav svg { width: 18px; height: 18px; }
+    /* Force left/right placement and clear any earlier left/right rules */
+    .proj-nav.left { left: 12px !important; right: auto !important; }
+    .proj-nav.right { right: 12px !important; left: auto !important; }
+    .proj-nav svg { width: 16px; height: 16px; }
+    .proj-nav:hover { transform: scale(1.04); }
 }
 
-/* Make floating contact smaller on narrow screens (compact pill) */
-@media (max-width: 520px) {
-    #floating-contact {
-        bottom: 8px; /* pull it a bit closer to avoid overlapping nav gestures */
-        padding: 4px 6px; /* tighter pill */
-        gap: 6px;
-        box-shadow: 0 6px 14px rgba(0,0,0,0.06);
-    }
-    /* smaller circular icons to reduce footprint on narrow phones */
-    #floating-contact .contact-btn { width: 32px; height: 32px; min-width:32px; min-height:32px; padding:4px; }
-    /* make SVG icons a touch smaller so they fit neatly */
-    #floating-contact .contact-btn svg { width: 14px !important; height: 14px !important; }
+/* Extra-small screens: make arrows even smaller so they don't obscure content */
+@media (max-width: 420px) {
+    .proj-nav { width: 36px; height: 36px; padding: 5px; border-radius: 9px; }
+    .proj-nav svg { width: 14px; height: 14px; }
 }
 
-/* Extra-small screens (very compact) */
-@media (max-width: 380px) {
-    #floating-contact {
-        bottom: 6px;
-        padding: 4px 6px;
-        gap: 5px;
+/* Add horizontal breathing room on project pages for small screens */
+@media (max-width: 900px) {
+    /* Ensure project detail content doesn't touch screen edges on small devices */
+    .project-hero, .project, .project-hero .container, .project .container {
+        padding-left: 16px;
+        padding-right: 16px;
+        box-sizing: border-box;
     }
-    /* tiniest touch targets while preserving accessibility — keep >=28px */
-    #floating-contact .contact-btn { width: 28px; height: 28px; min-width:28px; min-height:28px; padding:3px; }
-    #floating-contact .contact-btn svg { width: 12px !important; height: 12px !important; }
+    /* If container width is set wide, make it fit with the padding */
+    .project-hero .container, .project .container {
+        width: 100%;
+        max-width: 100%;
+    }
 }
 
 /* small responsive tweaks */
@@ -381,11 +422,6 @@ header.visible {
     header { display: none !important; }
     /* remove the scroll-padding set for fixed header so slides snap to true top */
     main#slides { scroll-padding-top: 0 !important; }
-}
-
-/* Slightly larger header text for desktop users */
-@media (min-width: 900px) {
-    .logo { font-size: 1.2rem; }
 }
 
 /* small swipe hint for mobile/trackpad users */

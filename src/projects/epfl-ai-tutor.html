@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>EPFL AI Tutor - Project Details</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    /* Add styles from the LMMs-Eval template */
+    .project-hero { padding-top: 40px; }
+    .meta-inline { color: var(--muted-muted); margin-bottom: 12px; }
+    .project-header { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; margin-bottom: 8px; }
+    .project-header h2 { font-size: clamp(1.6rem, 2.6vw, 2.6rem); margin: 0; line-height: 1.05; }
+    .project-location { margin: 0; color: var(--muted-muted); font-weight: 600; }
+    .repo-inline { display: inline-block; margin-top: 8px; }
+  .site-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .site-header .header-right { display: flex; align-items: center; gap: 12px; }
+    .pdf-embed { width: 100%; max-width: 920px; height: 640px; border: none; border-radius: 8px; box-shadow: 0 8px 28px rgba(11,11,16,0.08); margin: 18px auto; display: block; }
+    @media (max-width: 920px) { .pdf-embed { max-width: 720px; height: 520px; } }
+    @media (max-width: 720px) { .pdf-embed { height: 420px; } }
+    .pdf-fallback { text-align: center; margin-top: 8px; }
+    .footer-actions { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; }
+    .up-btn { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 8px; background: var(--periwinkle); color: white; text-decoration: none; box-shadow: 0 6px 14px rgba(11,11,16,0.12); }
+    .up-btn svg { color: white; }
+    .up-btn:focus { outline: 2px solid color-mix(in srgb, var(--periwinkle) 60%, black); outline-offset: 2px; }
+    /* Simple Table Styles */
+    .results-table { width: 100%; max-width: 600px; margin: 20px auto; border-collapse: collapse; box-shadow: 0 4px 12px rgba(11,11,16,0.08); border-radius: 8px; overflow: hidden; }
+    .results-table th, .results-table td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--muted-border); }
+    .results-table th { background-color: var(--muted-bg); font-weight: 600; }
+    .results-table tr:last-child td { border-bottom: none; }
+    .results-table tr:nth-child(even) { background-color: var(--muted-bg); }
+    .results-table td:nth-child(2), .results-table td:nth-child(3) { font-weight: 500; }
+  /* TOC Sidebar Styles — keep consistent with global styles */
+  .project-toc { position: fixed; left: 18px; top: 120px; width: 240px; padding: 8px; box-sizing: border-box; z-index: 120; }
+  .project-toc h3 { margin: 0 0 8px 0; color: var(--periwinkle); font-size: 1rem; }
+  .project-toc ul { list-style: none; margin: 0; padding: 0; }
+  .project-toc li { margin-bottom: 10px; }
+  .project-toc a { color: var(--charcoal); text-decoration: none; display: block; padding: 6px 8px; border-radius: 6px; }
+  .project-toc a:hover { color: white; background: var(--periwinkle); }
+  .project-toc a { white-space: normal; }
+  .project-toc li.active a { background: var(--periwinkle); color: white; }
+  @media (max-width: 900px) { .project-toc { display: none; } }
+
+  /* Project Nav Arrows — align with site-wide glass nav style and bottom placement */
+  .proj-nav {
+    position: fixed;
+    bottom: 22px;
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.32);
+    backdrop-filter: blur(10px) saturate(150%);
+    -webkit-backdrop-filter: blur(10px) saturate(150%);
+    border: 1px solid rgba(255,255,255,0.28);
+    box-shadow: 0 10px 24px rgba(11,11,16,0.08);
+    color: var(--espresso);
+    z-index: 220;
+  }
+  .proj-nav.left { left: 266px; }
+  .proj-nav.right { right: 120px; }
+  @media (max-width: 900px) { .proj-nav { display: none; } }
+
+  /* Inline code styling for better readability */
+  code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace; background: rgba(0,0,0,0.04); padding: 0.12rem 0.36rem; border-radius: 6px; color: var(--espresso); }
+
+  </style>
+</head>
+<body>
+    <header>
+    <div class="container site-header">
+      <h1>EPFL AI Tutor</h1>
+      <div class="header-right">
+        <nav><ul><li><a href="../index.html">Home</a></li><li><a href="../index.html#projects">Projects</a></li></ul></nav>
+      </div>
+    </div>
+  </header>
+  <aside class="project-toc" aria-label="Projects table of contents">
+    <h3>Projects</h3>
+    <nav>
+      <ul id="project-toc-list"></ul>
+    </nav>
+  </aside>
+  <a id="project-prev" class="proj-nav left" href="#" aria-label="Previous project" title="Previous project">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+  <a id="project-next" class="proj-nav right" href="#" aria-label="Next project" title="Next project">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+  <main class="container project-hero" id="top">
+    <div class="project-header">
+      <h2>Fines HerbesMCQA: Enhancing Qwen3-0.6B Base for STEM Multiple Choice QA</h2>
+      <p class="meta-inline project-location">EPFL (CS-552 Project)</p>
+    </div>
+
+    <p class="repo-inline"><a class="btn small" href="https://github.com/luciehmct/epfl-ai-tutor" target="_blank" rel="noopener">View repository on GitHub</a></p>
+
+    <p><strong>Context:</strong> For the CS-552 (Modern NLP) course project, our team (Al et fines herbes) fine-tuned the Qwen3-0.6B-Base model to create a specialized AI tutor for advanced STEM Multiple Choice Question Answering (MCQA). We implemented several variants: a model aligned using Stepwise Direct Preference Optimization (SDPO), a Supervised Fine-Tuned (SFT) MCQA model, a memory-efficient Quantized model, and a knowledge-enhanced Retrieval-Augmented Generation (RAG) model.</p>
+
+    <h3>My Contributions</h3>
+    <p>As part of the 4-person team, I was primarily responsible for developing and evaluating the Quantized model variant.</p>
+
+    <h4>Lead: Quantized Model</h4>
+    <ul>
+  <li>Implemented a post-training quantization (PTQ) pipeline using the <code>llmcompressor</code> library to reduce the model size.</li>
+        <li>Focused on a single-pass, oneshot PTQ approach, applying symmetric per-channel weight quantization and per-tensor activation clipping.</li>
+        <li>Experimented with various quantization schemes (W8A8, W4A16, W4A4) and calibration dataset sizes (e.g., 1024, 2048 samples) to find the optimal trade-off between accuracy and memory efficiency.</li>
+        <li>Benchmarked the different quantized configurations for MCQA accuracy and peak VRAM usage on a subset of STEMQA prompts.</li>
+        <li>Identified the W8A8-1024 configuration as the best performer, achieving slightly higher accuracy than the full-precision model with the best accuracy-to-VRAM ratio.</li>
+  <li>Configured the model's <code>quantization_config</code> file and uploaded the final W8A8-1024 quantized model checkpoints to HuggingFace for evaluation.</li>
+    </ul>
+
+    <h3>Shared Responsibilities</h3>
+    <p>In addition to my lead role on the quantized model, I collaborated with the team on several tasks:</p>
+    <ul>
+        <li>Collected and manually labeled preference data derived from ChatGPT interactions using the provided GPT Wrapper for the DPO training phase.</li>
+        <li>Contributed to preprocessing datasets like UltraFeedback and StackExchange to filter for STEM content and establish difficulty rankings for SDPO training.</li>
+        <li>Participated in writing the literature review, progress report, and the final 6-page project report.</li>
+        <li>Ensured reproducibility by documenting methods and contributing to the shared training codebase.</li>
+    </ul>
+
+    <h3>Results & Analysis</h3>
+    <p>Our final combined model (DPO + SFT3) showed improvements over the base Qwen3-0.6B model on several benchmarks, although the gains were often within the standard deviation range. The SDPO approach generally outperformed standard DPO, demonstrating the benefit of curriculum learning for preference alignment.</p>
+    <p>My work on quantization demonstrated that the W8A8-1024 scheme provided the best balance: it maintained (and slightly improved) accuracy compared to the full-precision MCQA model while reducing memory footprint, making it suitable for deployment on resource-constrained hardware. More aggressive quantization like W4A4 significantly degraded performance.</p>
+
+    <table class="results-table">
+        <thead>
+            <tr>
+                <th>Quantization</th>
+                <th>Accuracy (STEMQA subset)</th>
+                <th>Avg Peak VRAM (GiB)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>W8A8-1024 (Selected)</td>
+                <td>42.0%</td>
+                <td>1.17</td>
+            </tr>
+            <tr>
+                <td>MCQA model (BF16)</td>
+                <td>41.0%</td>
+                <td>1.16</td>
+            </tr>
+            <tr>
+                <td>W4A16</td>
+                <td>41.0%</td>
+                <td>1.37</td>
+            </tr>
+            <tr>
+                 <td>W4A4</td>
+                <td>23.0%</td>
+                <td>3.24</td>
+            </tr>
+        </tbody>
+    </table>
+    <p style="text-align:center; font-size: 0.9rem; color: var(--muted-muted); margin-top: -10px;">Table comparing key quantization results.</p>
+
+    <h3>Ethical Considerations</h3>
+    <p>We discussed the ethical implications, including the English-language bias of the base model and the need for careful adaptation for other languages, especially low-resource ones. We also noted how quantization could improve accessibility by enabling deployment on less powerful devices, but carries risks of exacerbating performance disparities across different knowledge domains or dialects if not carefully validated.</p>
+
+  <h3>Final Report</h3>
+  <iframe class="pdf-embed" src="../assets/Final_report.pdf"></iframe>
+  <div class="pdf-fallback">If the PDF doesn't display, <a href="../assets/Final_report.pdf" target="_blank" rel="noopener">open the report in a new tab</a>.</div>
+
+
+    <div class="footer-actions">
+      <a class="btn ghost" href="../index.html#projects">Back to projects</a>
+      <a class="up-btn" href="#top" title="Back to top" aria-label="Back to top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 4L12 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6 10L12 4L18 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </main>
+  <script>
+    // Smooth scroll behavior for the up arrow only.
+    document.addEventListener('DOMContentLoaded', function () {
+      var upBtn = document.querySelector('.up-btn');
+      if (upBtn) {
+        upBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    });
+  </script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

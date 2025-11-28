@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Automated eDNA MinION Pipeline — Project Details</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    /* Styles adapted from the Reference Project (EPFL AI Tutor) */
+    .project-hero { padding-top: 40px; }
+    .meta-inline { color: var(--muted-muted); margin-bottom: 12px; }
+    .project-header { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; margin-bottom: 8px; }
+    .project-header h2 { font-size: clamp(1.6rem, 2.6vw, 2.6rem); margin: 0; line-height: 1.05; }
+    .project-location { margin: 0; color: var(--muted-muted); font-weight: 600; }
+    .repo-inline { display: inline-block; margin-top: 8px; }
+    .site-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .site-header .header-right { display: flex; align-items: center; gap: 12px; }
+    
+    /* Footer & Nav Actions */
+    .footer-actions { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; }
+    .up-btn { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 8px; background: var(--periwinkle); color: white; text-decoration: none; box-shadow: 0 6px 14px rgba(11,11,16,0.12); }
+    .up-btn svg { color: white; }
+    
+    /* PDF Embed Style */
+    .pdf-embed { width: 100%; max-width: 920px; height: 640px; border: none; border-radius: 8px; box-shadow: 0 8px 28px rgba(11,11,16,0.08); margin: 18px auto; display: block; }
+    .pdf-fallback { text-align: center; margin-top: 8px; }
+    @media (max-width: 920px) { .pdf-embed { max-width: 720px; height: 520px; } }
+    @media (max-width: 720px) { .pdf-embed { height: 420px; } }
+
+    /* Results Table Style */
+    .results-table { width: 100%; max-width: 800px; margin: 20px auto; border-collapse: collapse; box-shadow: 0 4px 12px rgba(11,11,16,0.08); border-radius: 8px; overflow: hidden; }
+    .results-table th, .results-table td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--muted-border); }
+    .results-table th { background-color: var(--muted-bg); font-weight: 600; }
+    .results-table tr:last-child td { border-bottom: none; }
+    .results-table tr:nth-child(even) { background-color: var(--muted-bg); }
+    .results-table td:nth-child(2) { font-family: ui-monospace, monospace; }
+
+    /* TOC Sidebar */
+    .project-toc { position: fixed; left: 18px; top: 120px; width: 240px; padding: 8px; box-sizing: border-box; z-index: 120; }
+    .project-toc h3 { margin: 0 0 8px 0; color: var(--periwinkle); font-size: 1rem; }
+    .project-toc ul { list-style: none; margin: 0; padding: 0; }
+    .project-toc li { margin-bottom: 10px; }
+    .project-toc a { color: var(--charcoal); text-decoration: none; display: block; padding: 6px 8px; border-radius: 6px; }
+    .project-toc a:hover { color: white; background: var(--periwinkle); }
+    @media (max-width: 900px) { .project-toc { display: none; } }
+
+    /* Navigation Arrows */
+    .proj-nav {
+      position: fixed;
+      bottom: 22px;
+      width: 46px;
+      height: 46px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.32);
+      backdrop-filter: blur(10px) saturate(150%);
+      -webkit-backdrop-filter: blur(10px) saturate(150%);
+      border: 1px solid rgba(255,255,255,0.28);
+      box-shadow: 0 10px 24px rgba(11,11,16,0.08);
+      color: var(--espresso);
+      z-index: 220;
+    }
+    .proj-nav.left { left: 266px; }
+    .proj-nav.right { right: 120px; }
+    @media (max-width: 900px) { .proj-nav { display: none; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container site-header">
+      <h1>Automated eDNA MinION Pipeline</h1>
+      <div class="header-right">
+        <nav><ul><li><a href="../index.html">Home</a></li><li><a href="../index.html#projects">Projects</a></li></ul></nav>
+      </div>
+    </div>
+  </header>
+
+  <aside class="project-toc" aria-label="Projects table of contents">
+    <h3>Projects</h3>
+    <nav>
+      <ul id="project-toc-list"></ul>
+    </nav>
+  </aside>
+
+  <a id="project-prev" class="proj-nav left" href="#" aria-label="Previous project" title="Previous project">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+  <a id="project-next" class="proj-nav right" href="#" aria-label="Next project" title="Next project">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+
+  <main class="container project-hero" id="top">
+    <div class="project-header">
+      <h2>Automated Bioinformatics eDNA Analysis for MinION</h2>
+      <p class="meta-inline project-location">GenoRobotics / Personal</p>
+    </div>
+
+    <p class="repo-inline"><a class="btn small" href="https://github.com/luciehmct/GenoRobotics_pipeline" target="_blank" rel="noopener">View repository on GitHub</a></p>
+
+    <p><strong>Context:</strong> As part of the <a href="https://www.genorobotics.org/" target="_blank">GenoRobotics</a> initiative, this project focuses on biodiversity monitoring in the Udzungwa Mountains (Tanzania). The goal was to develop a fully automated, scalable bioinformatics pipeline capable of processing on-site Oxford Nanopore (MinION) sequencing data. The pipeline identifies amphibian and mammal species (e.g., <em>Leptopelis</em>, <em>Rhynchocyon</em>) by comparing environmental DNA (eDNA) reads against a Sanger reference database.</p>
+
+    <h3>My Contributions</h3>
+    <p>I designed and implemented the end-to-end Python pipeline, transitioning the workflow from manual analysis to a reproducible automated system. My key technical contributions included:</p>
+
+    <ul>
+        <li><strong>Pipeline Architecture:</strong> Built a modular, linear workflow integrating standard tools (<code>cutadapt</code>, <code>minimap2</code>, <code>samtools</code>) to process raw FASTQ data through to species matrices.</li>
+        <li><strong>Consensus-Based Validation (Step 5):</strong> I introduced a critical validation step that separates "High Abundance" (quantitative) from "True Identity" (qualitative). By generating consensus sequences for high-count targets and re-aligning them to the database, the system prevents false positives caused by PCR bias or sequencing noise.</li>
+        <li><strong>Reproducibility:</strong> Packaged all dependencies in a local Conda environment to ensure the pipeline is portable and can run on standard field laptops.</li>
+    </ul>
+
+    <h3>Results & Analysis</h3>
+    <p>The automated pipeline achieved <strong>100% concordance</strong> in species identification compared to the manual methods used in the original Menegon et al. study. The matrix generation successfully filtered noise (requiring MAPQ > 40) to produce clear abundance signals.</p>
+    
+    <p>The consensus validation step proved essential for interpreting results. For example, while <em>Leptopelis CO1</em> showed very high abundance (27k reads), the validation revealed a low identity match (17.2%), flagging it for manual inspection rather than blind acceptance. Conversely, species like <em>Sorex alpinus</em> were validated with high confidence.</p>
+
+    <table class="results-table">
+        <thead>
+            <tr>
+                <th>Sample Target</th>
+                <th>Read Count</th>
+                <th>Status</th>
+                <th>Identity %</th>
+                <th>Interpretation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Sorex_alpinus</td>
+                <td>4252</td>
+                <td>PASS</td>
+                <td>90.2%</td>
+                <td>High-confidence result.</td>
+            </tr>
+            <tr>
+                <td>Leptopelis_16S</td>
+                <td>4126</td>
+                <td>PASS</td>
+                <td>76.5%</td>
+                <td>Moderate identity.</td>
+            </tr>
+            <tr>
+                <td>Leptopelis_CO1</td>
+                <td>27883</td>
+                <td>PASS</td>
+                <td>17.2%</td>
+                <td>High abundance but <strong>low identity</strong> (Flagged).</td>
+            </tr>
+            <tr>
+                 <td>Rhynchocyon</td>
+                <td>1162</td>
+                <td>NO_ALIGN</td>
+                <td>0.0%</td>
+                <td>Detected, but coverage too low for consensus.</td>
+            </tr>
+             <tr>
+                 <td>Arthroleptis</td>
+                <td>9</td>
+                <td>TOO_FEW</td>
+                <td>0.0%</td>
+                <td>Low eDNA concentration.</td>
+            </tr>
+        </tbody>
+    </table>
+    <p style="text-align:center; font-size: 0.9rem; color: var(--muted-muted); margin-top: -10px;">Table: Validation report summary comparing abundance vs. consensus identity.</p>
+
+    <div class="footer-actions">
+      <a class="btn ghost" href="../index.html#projects">Back to projects</a>
+      <a class="up-btn" href="#top" title="Back to top" aria-label="Back to top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 4L12 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6 10L12 4L18 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </main>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var upBtn = document.querySelector('.up-btn');
+      if (upBtn) {
+        upBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    });
+  </script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

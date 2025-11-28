@@ -1,6 +1,14 @@
 {
   "projects": [
     {
+      "title": "Automated eDNA MinION Pipeline",
+      "description": "Project-local, reproducible pipeline for processing MinION amplicon reads, mapping to a Sanger reference DB and producing species-by-sample matrices plus consensus-based validation.",
+      "link": "https://github.com/luciehmct/GenoRobotics_pipeline",
+      "tags": ["Bioinformatics", "Nanopore", "MinION", "eDNA", "Reproducible Pipeline"],
+      "affiliation": "GenoRobotics",
+      "page": "projects/genorobotics-pipeline.html"
+    },
+    {
       "title": "LMMs-Eval — Evaluation Suite of Large Multimodal Models",
       "description": "Developed an open-source evaluation framework for large multimodal models (LMMs) supporting text, image, video, and audio tasks. I extended this suite to wildlife datasets (MammAlps, AnimalKingdom) to benchmark models like InternVL3-8B on species and behavior recognition, creating reproducible pipelines and standardized metrics.",
       "link": "https://github.com/luciehmct/lmms-eval",
@@ -44,5 +52,6 @@
       ,
       "page": "projects/cadmium-catcher.html"
     }
+
   ]
 }

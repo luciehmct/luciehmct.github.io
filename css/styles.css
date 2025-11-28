@@ -104,26 +104,27 @@ header {
 /* Make floating contact smaller on narrow screens (compact pill) */
 @media (max-width: 520px) {
     #floating-contact {
-        bottom: 10px;
-        padding: 6px 8px;
-        gap: 8px;
-        box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+        bottom: 8px; /* pull it a bit closer to avoid overlapping nav gestures */
+        padding: 4px 6px; /* tighter pill */
+        gap: 6px;
+        box-shadow: 0 6px 14px rgba(0,0,0,0.06);
     }
-    /* slightly smaller circular icons to reduce footprint */
-    #floating-contact .contact-btn { width: 36px; height: 36px; min-width:36px; min-height:36px; padding:6px; }
+    /* smaller circular icons to reduce footprint on narrow phones */
+    #floating-contact .contact-btn { width: 32px; height: 32px; min-width:32px; min-height:32px; padding:4px; }
     /* make SVG icons a touch smaller so they fit neatly */
-    #floating-contact .contact-btn svg { width: 16px !important; height: 16px !important; }
+    #floating-contact .contact-btn svg { width: 14px !important; height: 14px !important; }
 }
 
 /* Extra-small screens (very compact) */
 @media (max-width: 380px) {
     #floating-contact {
-        bottom: 8px;
-        padding: 5px 6px;
-        gap: 6px;
+        bottom: 6px;
+        padding: 4px 6px;
+        gap: 5px;
     }
-    #floating-contact .contact-btn { width: 32px; height: 32px; min-width:32px; min-height:32px; padding:4px; }
-    #floating-contact .contact-btn svg { width: 14px !important; height: 14px !important; }
+    /* tiniest touch targets while preserving accessibility — keep >=28px */
+    #floating-contact .contact-btn { width: 28px; height: 28px; min-width:28px; min-height:28px; padding:3px; }
+    #floating-contact .contact-btn svg { width: 12px !important; height: 12px !important; }
 }
 
 /* Icon-only contact buttons: small circular clickable icons */

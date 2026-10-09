@@ -4,6 +4,7 @@ import data from '../data/projects.json'
 const { projects } = data
 
 const experience = [
+  ['Sep 2026 – present', 'Sydney, Australia', 'Visiting Student Researcher · Vafaee Lab (Biomedical AI Laboratory), UNSW', 'Building specialised AI agents that support and accelerate drug discovery, using a knowledge graph of cancer biology.'],
   ['Feb – Jul 2026', 'Aubonne', 'AI & Data Science Intern · Merck Serono, Data & Analytics', [
     'Built NLP and generative-AI text-analysis tools and a chatbot to support knowledge management.',
     'Prototyped an environment, health & safety (EHS) application with AI features, front end and back end, using React, Palantir, AWS and Azure DevOps.',

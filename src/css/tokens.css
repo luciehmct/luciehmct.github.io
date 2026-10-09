@@ -1,0 +1,12 @@
+:root {
+  --bg: #0A0A0B; --surface: #111113; --line: rgba(255,255,255,.08); --line-strong: rgba(255,255,255,.18);
+  --fg: #EDEDED; --muted: #8A8A8F; --accent: #F5A3C7;
+  --font-sans: var(--font-plex-sans), system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+  --step--1: .833rem; --step-0: 1rem; --step-1: 1.25rem; --step-2: 1.563rem; --step-3: 2.441rem; --step-hero: clamp(3rem, 9vw, 8rem);
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 40px; --s7: 64px; --s8: 104px;
+  --radius: 2px; --max: 1200px; --gutter: clamp(16px, 4vw, 40px);
+  --ease: cubic-bezier(.2,.7,0,1); --dur-1: 160ms; --dur-2: 400ms; --dur-3: 900ms;
+  --nav-h: 56px;
+  color-scheme: dark;
+}

@@ -1,0 +1,13 @@
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes scene-in { from { opacity: 0 } }
+  .scene { animation: scene-in var(--dur-3) var(--ease) both; }
+
+  @supports (animation-timeline: view()) {
+    @keyframes reveal { from { opacity: 0; translate: 0 24px } }
+    [data-reveal] {
+      animation: reveal both var(--ease);
+      animation-timeline: view();
+      animation-range: entry 0% cover 25%;
+    }
+  }
+}
